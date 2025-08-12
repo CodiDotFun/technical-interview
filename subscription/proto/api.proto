@@ -14,3 +14,8 @@ service SubscriptionService {
 message PingRequest {
   string message = 1;
 }
+
+// The PingResponse message.
+message PingResponse {
+  string message = 1;
+}
