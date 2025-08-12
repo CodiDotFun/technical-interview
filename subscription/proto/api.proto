@@ -28,3 +28,7 @@ message SubscribeRequest {
 // The SubscribeResponse message.
 message SubscribeResponse {
 }
+
+// The ListSubscriptionsRequest message.
+message ListSubscriptionsRequest {
+}
