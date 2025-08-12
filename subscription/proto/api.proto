@@ -42,3 +42,7 @@ message ListSubscriptionsResponse {
 message UnsubscribeRequest {
   string email = 1;
 }
+
+// The UnsubscribeResponse message.
+message UnsubscribeResponse {
+}
