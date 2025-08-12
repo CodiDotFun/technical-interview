@@ -9,3 +9,8 @@ service SubscriptionService {
   rpc ListSubscriptions(ListSubscriptionsRequest) returns (ListSubscriptionsResponse);
   rpc Unsubscribe(UnsubscribeRequest) returns (UnsubscribeResponse);
 }
+
+// The PingRequest message.
+message PingRequest {
+  string message = 1;
+}
