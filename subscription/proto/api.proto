@@ -32,3 +32,8 @@ message SubscribeResponse {
 // The ListSubscriptionsRequest message.
 message ListSubscriptionsRequest {
 }
+
+// The ListSubscriptionsResponse message.
+message ListSubscriptionsResponse {
+  repeated string emails = 1;
+}
