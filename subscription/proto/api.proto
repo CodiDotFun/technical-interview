@@ -37,3 +37,8 @@ message ListSubscriptionsRequest {
 message ListSubscriptionsResponse {
   repeated string emails = 1;
 }
+
+// The UnsubscribeRequest message.
+message UnsubscribeRequest {
+  string email = 1;
+}
