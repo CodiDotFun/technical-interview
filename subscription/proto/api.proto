@@ -19,3 +19,8 @@ message PingRequest {
 message PingResponse {
   string message = 1;
 }
+
+// The SubscribeRequest message.
+message SubscribeRequest {
+  string email = 1;
+}
