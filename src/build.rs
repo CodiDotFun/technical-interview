@@ -31,3 +31,13 @@ fn build_subscription_service() -> Result<(), Box<dyn Error>> {
 
     Ok(())
 }
+
+fn main() -> Result<(), Box<dyn Error>> {
+    println!("cargo:rerun-if-changed=proto/api.proto");
+    println!("cargo:rerun-if-changed=proto/");
+    println!("Running the build script");
+
+    println!("building service service proto files");
+    build_subscription_service()?;
+    Ok(())
+}
