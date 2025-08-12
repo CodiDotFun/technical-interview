@@ -1,1 +1,11 @@
+syntax = "proto3";
 
+package subscription;
+
+// The SubscriptionService definition.
+service SubscriptionService {
+  rpc Ping(PingRequest) returns (PingResponse);
+  rpc Subscribe(SubscribeRequest) returns (SubscribeResponse);
+  rpc ListSubscriptions(ListSubscriptionsRequest) returns (ListSubscriptionsResponse);
+  rpc Unsubscribe(UnsubscribeRequest) returns (UnsubscribeResponse);
+}
