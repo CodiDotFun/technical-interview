@@ -20,3 +20,7 @@ async fn main() {
         .expect("Failed to bind address");
     let incoming =
         TcpIncoming::from_listener(listener, true, None).expect("Failed to create incoming");
+    let subscription_svc =
+        subscription_service::pb::subscription_service_server::SubscriptionServiceServer::new(
+            subscription_service::handlers::api::SubscriptionHandler::new(db),
+        );
