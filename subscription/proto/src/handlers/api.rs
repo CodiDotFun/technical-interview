@@ -43,3 +43,22 @@ impl SubscriptionService for SubscriptionHandler {
             tracing::error!(error = %err, "Failed to insert subscription");
             Status::internal("Failed to insert subscription")
         })?;
+
+        
+        Ok(Response::new(SubscribeResponse {}))
+    }
+
+    async fn list_subscriptions(
+        &self,
+        _request: Request<ListSubscriptionsRequest>,
+    ) -> Result<Response<ListSubscriptionsResponse>, Status> {
+        todo!()
+    }
+
+    async fn unsubscribe(
+        &self,
+        _request: Request<UnsubscribeRequest>,
+    ) -> Result<Response<UnsubscribeResponse>, Status> {
+        todo!()
+    }
+}
