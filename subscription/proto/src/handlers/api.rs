@@ -22,3 +22,24 @@ impl SubscriptionService for SubscriptionHandler {
             message: format!("Pong {}", request.get_ref().message),
         }))
     }
+
+
+    async fn subscribe(
+        &self,
+        request: Request<SubscribeRequest>,
+    ) -> Result<Response<SubscribeResponse>, Status> {
+        let req = request.into_inner();
+        let email = req.email;
+        sqlx::query!(
+            r#"
+            INSERT INTO subscriptions (email)
+            VALUES ($1)
+            "#,
+            email
+        )
+        .execute(&self.pool)
+        .await
+        .map_err(|err| {
+            tracing::error!(error = %err, "Failed to insert subscription");
+            Status::internal("Failed to insert subscription")
+        })?;
