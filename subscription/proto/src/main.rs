@@ -24,3 +24,11 @@ async fn main() {
         subscription_service::pb::subscription_service_server::SubscriptionServiceServer::new(
             subscription_service::handlers::api::SubscriptionHandler::new(db),
         );
+
+    tracing::info!("Server listening on {}", addr.clone());
+    Server::builder()
+        .add_service(subscription_svc)
+        .serve_with_incoming(incoming)
+        .await
+        .expect("Failed to serve");
+}
